@@ -75,3 +75,10 @@ A swap fee is applied automatically.
 - **InsufficientOutput**: Occurs when the output token amount is too low.
 - **WithdrawalTooSoon**: Enforced to prevent immediate liquidity withdrawal.
 
+---
+
+# License
+
+This project is  under the **MIT License**.
+
+
