@@ -28,3 +28,48 @@ Ensures pool stability by imposing a withdrawal delay after liquidity deposits.
 
 ## Secure PDAs
 Pools are managed via Program Derived Addresses (PDAs) for secure, trustless operations.
+
+# Usage
+
+## 1. Initialize Liquidity Pool
+Call the `initialize_pool` instruction to set up a new liquidity pool.  
+Specify parameters such as fee percentage and admin fee accounts.
+
+## 2. Add Liquidity
+Deposit two tokens into the pool.  
+Receive liquidity tokens representing your share of the pool.
+
+## 3. Remove Liquidity
+Redeem liquidity tokens for the underlying assets.  
+Enforce time-locked withdrawals for security.
+
+## 4. Swap Tokens
+Swap one token for another based on the pool's current state.  
+A swap fee is applied automatically.
+
+---
+
+# Program Details
+
+## Key Components
+
+### Accounts
+- **InitializePool**: Sets up the initial parameters for the pool.
+- **AddLiquidity**: Allows users to deposit tokens into the pool.
+- **RemoveLiquidity**: Enables users to withdraw their liquidity.
+- **Swap**: Facilitates token swapping.
+
+### State
+ maintains the state of the liquidity pool, including:
+- Pool authority
+- Token pair details
+- Total liquidity
+- Fee percentage
+- Admin fee account
+- Timestamps for time-locked operations
+
+### Custom Errors
+- **InvalidTokenPair**: Triggered when incorrect tokens are used for the pool.
+- **InsufficientOutput**: Occurs when the output token amount is too low.
+- **WithdrawalTooSoon**: Enforced to prevent immediate liquidity withdrawal.
+
